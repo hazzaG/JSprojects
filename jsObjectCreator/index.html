@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console for ingredients</title>
+    <script defer src="./jsObjectCreator.js"></script>
+</head>
+
+<body>
+    <h1>Console for jsObjectCreator</h1>
+    <button id="go">Click</button><br><br>
+
+    <div id="formContainer">
+        <div id="objectName">
+            <input id="objectNameInput" type="text" placeholder="Object name..." required>
+        </div>
+        <div id="keysVariableContainer">
+            <label for="keyNumber">Number of keys</label>
+            <input type="number" name="keyNumber" id="keyNumber" required><br>
+            <label for="nameToggle">Include name key?</label>
+            <select name="nameToggle" id="nameToggle">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        <div id="keyContainer">
+
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+</body>
+
+</html>
