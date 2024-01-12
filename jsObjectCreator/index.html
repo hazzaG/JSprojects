@@ -4,32 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>console for ingredients</title>
+    <title>JS Object Creator</title>
+    <link rel="stylesheet" href="./jsObjectCreator.css">
     <script defer src="./jsObjectCreator.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
 </head>
 
 <body>
-    <h1>Console for jsObjectCreator</h1>
+    <h1>JS Object Creator</h1>
+    <p>Step 1: Enter the name of the object, the number of keys in the object and select if you want the original object
+        name as a key.</p>
+    <p>Step 2: Press "Add key fields" and input the key names and which datatype they are. Leaving a datatype as
+        "Option" will result in an empty value.</p>
+    <p>Step 3: Press "Add value fields" and input the values for each key, arrays and objects will need to be
+        constructed properly.</p>
+    <p>Step 4: Press "Make Object" and copy the compleated object at the bottom of the page.</p>
 
-    <div id="formContainer">
-        <div id="objectName">
-            <input id="objectNameInput" type="text" placeholder="Object name..." required>
-        </div>
-        <div id="keysVariableContainer">
-            <label for="keyNumber">Number of keys</label>
-            <input type="number" name="keyNumber" id="keyNumber" required><br>
-            <label for="nameToggle">Include object name as a key?</label>
-            <select name="nameToggle" id="nameToggle">
-                <option value="Yes" id="nameYes">Yes</option>
-                <option value="No" id="nameNo">No</option>
-            </select>
-        </div>
+
+    <div id="objectCreatorContainer">
+        <label id="objectNameInputLable" for="objectNameInput">Object name</label>
+        <input id="objectNameInput" type="text" placeholder="Object name..." required>
+        <label id="keyNumberLabel" for="keyNumber">Number of keys</label>
+        <input type="number" name="keyNumber" id="keyNumber" required><br>
+        <label id="nameToggleLabel" for="nameToggle">Include object name as a key?</label>
+        <select name="nameToggle" id="nameToggle">
+            <option value="Yes" id="nameYes">Yes</option>
+            <option value="No" id="nameNo">No</option>
+        </select>
         <div id="keyContainer">
 
         </div>
-        <button id="submit">Add key fields</button>
-        <button id="submitThree">Add value fields</button>
-        <button id="submitTwo">Make Object</button>
+        <button class="objectSubmit" id="submit">Add key fields</button>
+        <button class="objectSubmit" id="submitThree">Add value fields</button>
+        <button class="objectSubmit" id="submitTwo">Make Object</button>
+
+
+
+
+    </div>
+    <h2>Objects will be output below</h2>
+    <div>
+        <div id="finalPrint"></div>
+    </div>
     </div>
 </body>
 

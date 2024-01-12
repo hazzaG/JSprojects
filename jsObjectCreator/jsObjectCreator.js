@@ -53,10 +53,8 @@ function camelCaseConverter(convert) {
 
 // Script for creating elements on page ------------------------------------------------------------
 
-const formContainer = document.getElementById("formContainer");
-const objectName = document.getElementById("objectName");
+const objectCreatorContainer = document.getElementById("objectCreatorContainer");
 const objectNameInput = document.getElementById("objectNameInput");
-const keysVariableContainer = document.getElementById("keysVariableContainer");
 const keyContainer = document.getElementById("keyContainer");
 const keyNumber = document.getElementById("keyNumber");
 const nameToggle = document.getElementById("nameToggle");
@@ -310,11 +308,22 @@ submitTwo.addEventListener("click", function () {
 
         }
         if (i < keyNumber.value) {
-            finalObject.push(" , ");
+            finalObject.push(", ");
         }
     }
     finalObject.push(" }")
     console.log(finalObject.join(""));
+
+    let finalObjectPrint = Object.assign(document.createElement("p"), {
+        id: `finalObjectPrint`,
+        name: "finalObjectPrint",
+        innerText: `${finalObject.join("")}`
+    });
+
+    const finalPrint = document.getElementById("finalPrint");
+
+    finalPrint.append(finalObjectPrint);
+
 });
 
 //-------------------------------------------------------------------------------------------------------
