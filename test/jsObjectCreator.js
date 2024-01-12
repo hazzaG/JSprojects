@@ -1,7 +1,6 @@
 
 //------------------------------------------- camelCaseConverter -----------------------------------------------
 
-
 function camelCaseConverter(convert) {
     // Decapitalize string
     let decap = convert.toLowerCase();
@@ -20,6 +19,7 @@ function camelCaseConverter(convert) {
         let decapSpaced = decapSplit.join("");
         decapStore.push(decapSpaced)
     };
+    console.log(decapStore);
     // Get last item in storage and split into individual words
     let plainWords = decapStore[decapStore.length - 1].split(" ");
     // New storage
@@ -27,7 +27,7 @@ function camelCaseConverter(convert) {
     // Push first word to storage uncapitalized
     finalStore.push(plainWords[0]);
     // For loop to go though each word in array apart from the first
-    for (let i = 1; i < plainWords.length; i++) {
+    for (i = 1; i < plainWords.length; i++) {
         // Find first letter and create a capitalized variable of it
         let cap = (plainWords[i]).charAt(0).toUpperCase();
         // Split word into array
@@ -41,6 +41,7 @@ function camelCaseConverter(convert) {
     };
     // Join the words with an nothing inbetween
     let finished = finalStore.join("");
+    console.log(finished);
     return finished;
 };
 //----------------------------------------------------------------------------------------------------
@@ -71,7 +72,7 @@ submit.addEventListener("click", function () {
     while (keyContainer.firstChild) {
         keyContainer.removeChild(keyContainer.lastChild);
     }
-    for (let i = 1; i <= keyNumber.value; i++) {
+    for (i = 1; i <= keyNumber.value; i++) {
         let nestedKeyContainer = Object.assign(document.createElement("div"), {
             id: `nestedKeyContainer${i}`,
             class: "nestedKeyContainer"
@@ -148,10 +149,11 @@ submit.addEventListener("click", function () {
 
 // Script for creating value inputs ----------------------------------------------------------
 
-// Assign objects for each restrictive data value input V
+// Make event listener for the dropdown box to append data value input forms next to them.
+// Assign objects for each restrictive data value input 
 
 submitThree.addEventListener("click", function () {
-    for (let i = 1; i <= keyNumber.value; i++) {
+    for (i = 1; i <= keyNumber.value; i++) {
         let keyDataText = document.getElementById(`select${i}`).value;
 
         let dataStringInput = Object.assign(document.createElement("input"), {
@@ -202,6 +204,7 @@ submitThree.addEventListener("click", function () {
             name: "dataDateInput",
             type: "date"
         });
+
         let nestedKeyContainer = document.getElementById(`nestedKeyContainer${i}`);
 
         switch (keyDataText) {
@@ -264,19 +267,15 @@ submitTwo.addEventListener("click", function () {
     finalObject.push(objectNameOutput);
     finalObject.push(" = { ")
     // If statement to check for name key and apply it
-    console.log(nameToggle.value)
     if (nameToggle.value === "Yes") {
         finalObject.push("objectName: ");
         finalObject.push(`"` + objectNameInput.value + `"` + "," + " ");
     }
     // For loop to construct any needed key value pairs
     for (i = 1; i <= keyNumber.value; i++) {
-        console.log(i);
         let keyName = document.getElementById(`key${i}`).value;
-        // camelCaseConverter key name
-        let keyNameOutput = camelCaseConverter(keyName);
         // Push key name
-        finalObject.push(keyNameOutput + ": ");
+        finalObject.push(keyName + ": ");
         let keyDataText = document.getElementById(`select${i}`).value;
         console.log(keyName, keyDataText);
         // Switch Case statement to read which data type and value is selected
@@ -313,13 +312,13 @@ submitTwo.addEventListener("click", function () {
             finalObject.push(" , ");
         }
     }
-    finalObject.push(" }")
+    finalObject.push("}")
     console.log(finalObject.join(""));
 });
 
 //-------------------------------------------------------------------------------------------------------
 
-//Complete array pushing function V
+//Complete array pushing function
 
 //ello: { objectName: "ello", String; "Hello!", Boolean; true, Number; 5, Array;[1, 2, 3], Object; { key: "value" } Date: 2001-03 - 23 }
 
@@ -329,4 +328,5 @@ submitTwo.addEventListener("click", function () {
 
 //ello = { objectName: "ello", a: "Hello!", b: true, c: 6, e: [1, 2, 3], f: { key: "value" }, g: 2001-03 - 23 }
 
-//tqtr = { objectName: "tq4tr4", eqreq: "eqrqer" , erqer: "qer" , qerqer: "qerqerq" , reqerqer: "eqrqerqerqe" }
+//ello = { objectName: "ello", a: "Hello!" , b: false , c: 7 , d: [1, 2, 3] , e: {Key: "value"} , f: "2001-03-23"}
+

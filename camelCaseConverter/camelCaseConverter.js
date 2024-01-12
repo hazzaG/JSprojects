@@ -19,10 +19,10 @@ function camelCaseConverter() {
         if (decapSplit[i].match(/[^a-z-\s]/)) {
             // Splice these characters out of array
             decapSplit.splice(i, 1, "");
-            // Create variable and push to storage
-            let decapSpaced = decapSplit.join("");
-            decapStore.push(decapSpaced)
         };
+        // Create variable and push to storage
+        let decapSpaced = decapSplit.join("");
+        decapStore.push(decapSpaced)
     };
     // Get last item in storage and split into individual words
     let plainWords = decapStore[decapStore.length - 1].split(" ");

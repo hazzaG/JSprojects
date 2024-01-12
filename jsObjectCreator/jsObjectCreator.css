@@ -1,0 +1,33 @@
+:root {
+    --color-blue: #264653;
+    --color-blue-rgb: 38, 70, 83;
+    --color-cyan: #2a9d8f;
+    --color-cyan-rgb: 42, 157, 143;
+    --color-yellow: #e9c46a;
+    --color-yellow-rgb: 233, 196, 106;
+    --color-orange: #f4a261;
+    --color-orange-rgb: 244, 162, 97;
+    --color-red: #e76f51;
+    --color-red-rgb: 231, 111, 81;
+    --color-gray: #545450;
+    --color-gray-rgb: 84, 84, 80;
+    --color-black: #2d2723;
+    --color-black-rgb: 45, 39, 35;
+    --color-white: #fffaF0;
+    --color-white-rgb: 255, 250, 240;
+
+
+
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+
+
+
+    --primary: #3b3c37;
+    --primary-rgb: 59, 60, 55;
+    --primatybg: #fffaF0;
+    --primatybg-rgb: 255, 250, 240;
+
+
+}
